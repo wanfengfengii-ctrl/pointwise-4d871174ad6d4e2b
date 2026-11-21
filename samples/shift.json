@@ -1,0 +1,11 @@
+{
+  "roll_id": "bench-a",
+  "rows": [
+    {"row_no": 1, "delta": "8", "origin": "bench-a.log:101"},
+    {"row_no": 2, "delta": "-8", "origin": "bench-a.log:102"},
+    {"row_no": 3, "delta": "2", "origin": "bench-a.log:103"},
+    {"row_no": 4, "delta": "9", "origin": "bench-a.log:104"},
+    {"row_no": 5, "delta": "-6", "origin": "bench-a.log:105"},
+    {"row_no": 6, "delta": "1", "origin": "bench-a.log:106"}
+  ]
+}
