@@ -4,6 +4,7 @@ from fractions import Fraction
 from issue.envelope import json_bytes, json_object, require_fields
 from issue.windows import ClosedWindow, normalize_windows
 from replay.rationals import encode_rational, parse_rational, require_database_id, require_positive_int
+from replay.transform import decode_transform
 from source.sequence import validate_text
 
 
@@ -72,6 +73,7 @@ def _decode_row(record):
 def _decode_section(record):
     require_fields(record, {'evidence', 'rows'}, 'window section')
     evidence = validate_text(record['evidence'], 'section evidence')
+    decode_transform(evidence)
     if not isinstance(record['rows'], list) or not record['rows']:
         raise ValueError('a window section must contain selected rows')
     return WindowSection(evidence, tuple(_decode_row(row) for row in record['rows']))
